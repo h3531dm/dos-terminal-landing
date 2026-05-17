@@ -3,75 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SYSTEM</title>
-
+<title>Agenda Hotel</title>
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Courier New', monospace;
+  color: #00e676;
 }
-
-body{
-    background:#000;
-    color:#00ff00;
-    font-family:"Courier New", monospace;
-    overflow:hidden;
+.text {
+  font-size: 18px;
+  letter-spacing: 4px;
+  opacity: 0;
+  animation: fadeInOut 1.8s ease forwards;
 }
-
-#screen{
-    width:100%;
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    gap:20px;
-}
-
-.text{
-    font-size:22px;
-    letter-spacing:2px;
-    animation:blink 1s infinite;
-}
-
-@keyframes blink{
-    50%{
-        opacity:0.4;
-    }
-}
-
-button{
-    background:#000;
-    color:#00ff00;
-    border:1px solid #00ff00;
-    padding:14px 30px;
-    font-size:18px;
-    cursor:pointer;
-    font-family:"Courier New", monospace;
-    transition:.2s;
-}
-
-button:hover{
-    background:#00ff00;
-    color:#000;
+@keyframes fadeInOut {
+  0%   { opacity: 0; }
+  30%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
 }
 </style>
 </head>
-
 <body>
-
-<div id="screen">
-    <div class="text">C:\SYSTEM&gt;</div>
-    <button onclick="enterSystem()">ENTER</button>
-</div>
-
+<div class="text">AGENDA HOTEL</div>
 <script>
-function enterSystem(){
-    window.location.href = "https://script.google.com/macros/s/AKfycbwRoYlOyjyJOXHsPXkL4dKgs8VH-5-6cctFubpkSux31pn9LfJ19FcyKaeskD16hpMF/exec";
-}
+setTimeout(() => {
+  window.location.href = "https://script.google.com/macros/s/AKfycbwRoYlOyjyJOXHsPXkL4dKgs8VH-5-6cctFubpkSux31pn9LfJ19FcyKaeskD16hpMF/exec";
+}, 1800);
 </script>
-
 </body>
 </html>
