@@ -1,40 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agenda Hotel</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  font-family: 'Courier New', monospace;
-  color: #00e676;
-}
-.text {
-  font-size: 18px;
-  letter-spacing: 4px;
-  opacity: 0;
-  animation: fadeInOut 1.8s ease forwards;
-}
-@keyframes fadeInOut {
-  0%   { opacity: 0; }
-  30%  { opacity: 1; }
-  80%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda Hotel</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* Splash Screen */
+    #splash {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .text {
+      font-size: 18px;
+      letter-spacing: 4px;
+      color: #00e676;
+      opacity: 0;
+      animation: fadeInOut 1.8s ease forwards;
+    }
+
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0;
+      }
+
+      30% {
+        opacity: 1;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* App */
+    #app {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      display: none;
+      background: #fff;
+    }
+  </style>
 </head>
+
 <body>
-<div class="text">AGENDA HOTEL</div>
-<script>
-setTimeout(() => {
-  window.location.href = "https://script.google.com/macros/s/AKfycbxeuSOBAGG6UIgRlyWXhUY1EnqWGcPBsUd5-dMkFhgrTqi1DPeBi_7uWGZz505J0Kgt/exec";
-}, 1800);
-</script>
+
+  <!-- Tela inicial -->
+  <div id="splash">
+    <div class="text">AGENDA HOTEL</div>
+  </div>
+
+  <!-- Google Script -->
+  <iframe
+    id="app"
+    src="https://script.google.com/macros/s/AKfycbxeuSOBAGG6UIgRlyWXhUY1EnqWGcPBsUd5-dMkFhgrTqi1DPeBi_7uWGZz505J0Kgt/exec">
+  </iframe>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('splash').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+    }, 1800);
+  </script>
+
 </body>
 </html>
